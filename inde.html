@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SinaSecurity — Segurança Desde a Origem</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <div class="nav-logo" onclick="showSection('home')">SinaSecurity</div>
+  <ul class="nav-links">
+    <li><a onclick="showSection('home')" class="active" data-section="home">Início</a></li>
+    <li><a onclick="showSection('planos')" data-section="planos">Planos</a></li>
+    <li><a onclick="showSection('contato')" data-section="contato">Contato</a></li>
+    <li><a onclick="showSection('historia')" data-section="historia">História</a></li>
+    <li><a onclick="showSection('creditos')" data-section="creditos">Créditos</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a onclick="showSection('home');closeMenu()" data-section="home">Início</a>
+  <a onclick="showSection('planos');closeMenu()" data-section="planos">Planos</a>
+  <a onclick="showSection('contato');closeMenu()" data-section="contato">Contato</a>
+  <a onclick="showSection('historia');closeMenu()" data-section="historia">História</a>
+  <a onclick="showSection('creditos');closeMenu()" data-section="creditos">Créditos</a>
+</div>
+
+<section id="home" class="active">
+  <div class="hero">
+    <div class="hero-tag">DevSecOps · Pentest · Análise de Dados</div>
+    <h1>O futuro da segurança<br>começa <em>antes</em><br>do ataque.</h1>
+    <p class="hero-sub">Protegemos sistemas desde sua origem — não apenas na superfície. Segurança integrada ao desenvolvimento, não adicionada depois.</p>
+    <div class="hero-cta">
+      <button class="btn-primary" onclick="showSection('planos')"><span>Ver Planos</span></button>
+      <button class="btn-outline" onclick="showSection('contato')">Falar com Especialista</button>
+    </div>
+  </div>
+
+  <div class="services-strip">
+    <div class="service-item fade-in">
+      <div class="service-num">01 / 03</div>
+      <h3>DevSecOps</h3>
+      <p>Integramos segurança em cada etapa do pipeline de desenvolvimento. SAST, DAST, análise de dependências e políticas de segurança automatizadas desde o primeiro commit.</p>
+    </div>
+    <div class="service-item fade-in">
+      <div class="service-num">02 / 03</div>
+      <h3>Pentest Avançado</h3>
+      <p>Testes de invasão conduzidos por especialistas certificados. Identificamos vulnerabilidades críticas em aplicações web, APIs, redes e infraestrutura cloud antes que atacantes reais o façam.</p>
+    </div>
+    <div class="service-item fade-in">
+      <div class="service-num">03 / 03</div>
+      <h3>Análise de Dados em Segurança</h3>
+      <p>Transformamos dados de segurança em inteligência acionável. Monitoramento contínuo, detecção de anomalias por ML e dashboards executivos em tempo real.</p>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat-item fade-in">
+      <div class="stat-num">99%</div>
+      <div class="stat-label">Taxa de detecção de vulnerabilidades críticas</div>
+    </div>
+    <div class="stat-item fade-in">
+      <div class="stat-num">72h</div>
+      <div class="stat-label">Tempo médio de resposta a incidentes</div>
+    </div>
+    <div class="stat-item fade-in">
+      <div class="stat-num">ISO</div>
+      <div class="stat-label">Alinhamento com ISO 27001 e NIST CSF</div>
+    </div>
+    <div class="stat-item fade-in">
+      <div class="stat-num">0→1</div>
+      <div class="stat-label">Da ideia ao produto seguro</div>
+    </div>
+  </div>
+
+  <div class="manifesto">
+    <div>
+      <div class="manifesto-tag">Nosso Princípio</div>
+    </div>
+    <blockquote class="fade-in">
+      "A maioria das empresas trata segurança como um <em>cadeado na porta</em>. Nós a construímos <em>nas paredes</em>."
+    </blockquote>
+  </div>
+
+  <footer>
+    <div class="footer-logo">◈ SinaSecurity</div>
+    <p>© 2026 SinaSecurity. Todos os direitos reservados.</p>
+    <p>CNPJ 00.000.000/0001-00</p>
+  </footer>
+</section>
+
+<section id="planos">
+  <div style="padding: 0 4rem;">
+    <div class="section-header fade-in">
+      <div class="section-tag">Nossos Planos</div>
+      <h2>Segurança<br>sob medida.</h2>
+      <p>Cada empresa tem um perfil único de risco. Por isso, todos os nossos planos são personalizados após uma avaliação inicial gratuita.</p>
+    </div>
+
+    <div class="plans-grid">
+      <div class="plan-card fade-in">
+        <div class="plan-icon">🛡️</div>
+        <div class="plan-badge">Essencial</div>
+        <h3>Startup Secure</h3>
+        <p class="plan-desc">Para startups e pequenas empresas em fase inicial que precisam de uma base sólida de segurança desde o primeiro dia.</p>
+        <ul class="plan-features">
+          <li>Análise de vulnerabilidades (SAST/DAST)</li>
+          <li>Configuração segura de cloud (AWS/GCP)</li>
+          <li>Revisão de dependências e CVEs</li>
+          <li>Política de senhas e MFA</li>
+          <li>Relatório executivo mensal</li>
+          <li>Suporte via Slack (horário comercial)</li>
+        </ul>
+        <div class="plan-price">A partir de R$ 2.500/mês</div>
+        <button class="btn-outline" style="width:100%" onclick="showSection('contato')">Solicitar Proposta</button>
+      </div>
+
+      <div class="plan-card featured fade-in">
+        <div class="plan-icon">⚔️</div>
+        <div class="plan-badge">Recomendado</div>
+        <h3>Growth Shield</h3>
+        <p class="plan-desc">Para empresas em crescimento com necessidades avançadas de segurança, compliance e proteção de dados de clientes.</p>
+        <ul class="plan-features">
+          <li>Tudo do plano Essencial</li>
+          <li>Pentest completo (web, API, rede)</li>
+          <li>Pipeline CI/CD com security gates</li>
+          <li>Monitoramento 24/7 com alertas</li>
+          <li>Análise de dados e SIEM</li>
+          <li>Conformidade LGPD/ISO 27001</li>
+          <li>CSO dedicado part-time</li>
+          <li>Suporte prioritário 24/7</li>
+        </ul>
+        <div class="plan-price">A partir de R$ 8.000/mês</div>
+        <button class="btn-primary" style="width:100%" onclick="showSection('contato')"><span>Solicitar Proposta</span></button>
+      </div>
+
+      <div class="plan-card fade-in">
+        <div class="plan-icon">🔬</div>
+        <div class="plan-badge">Enterprise</div>
+        <h3>Fortress</h3>
+        <p class="plan-desc">Solução completa para empresas de médio e grande porte com ambientes complexos e requisitos regulatórios rígidos.</p>
+        <ul class="plan-features">
+          <li>Tudo do plano Growth Shield</li>
+          <li>Red Team & Adversary Simulation</li>
+          <li>Threat Intelligence personalizada</li>
+          <li>Zero Trust Architecture</li>
+          <li>Resposta a incidentes (IR) dedicada</li>
+          <li>Treinamento de equipe interna</li>
+          <li>CISO-as-a-Service</li>
+          <li>SLA garantido contratualmente</li>
+        </ul>
+        <div class="plan-price">Consultar — proposta customizada</div>
+        <button class="btn-outline" style="width:100%" onclick="showSection('contato')">Falar com Especialista</button>
+      </div>
+    </div>
+
+    <div class="plan-note fade-in">
+      <div style="font-size:2rem">💬</div>
+      <p><strong>Não encontrou o que precisa?</strong> Todos os nossos planos são personalizados. Realizamos uma avaliação gratuita de 60 minutos para entender o perfil de risco da sua empresa antes de apresentar qualquer proposta.</p>
+      <button class="btn-primary" onclick="showSection('contato')"><span>Agendar Avaliação Gratuita</span></button>
+    </div>
+  </div>
+
+  <footer style="margin-top: 4rem;">
+    <div class="footer-logo">◈ SinaSecurity</div>
+    <p>© 2025 SinaSecurity. Todos os direitos reservados.</p>
+  </footer>
+</section>
+
+<section id="contato">
+  <div style="padding: 0 4rem;">
+    <div class="section-header fade-in">
+      <div class="section-tag">Contato</div>
+      <h2>Vamos proteger<br>seu negócio.</h2>
+      <p>Resposta garantida em até 24 horas úteis. Para emergências de segurança, use nosso canal prioritário.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info fade-in">
+        <h3>Fale com nosso time</h3>
+        <p>Nossa equipe de especialistas está pronta para entender seus desafios e apresentar as soluções mais adequadas ao seu contexto.</p>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📧</div>
+          <div class="contact-detail-text">
+            <strong>E-mail Geral</strong>
+            contato@sinasecurity.com.br
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">🚨</div>
+          <div class="contact-detail-text">
+            <strong>Emergências de Segurança</strong>
+            sos@sinasecurity.com.br
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <div class="contact-detail-text">
+            <strong>Localização</strong>
+            São Paulo, SP — Brasil (atendimento remoto nacional)
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">🕐</div>
+          <div class="contact-detail-text">
+            <strong>Horário Comercial</strong>
+            Seg–Sex, 09h às 18h (BRT)
+          </div>
+        </div>
+
+        <div style="margin-top:2rem; padding:1.5rem; border:1px solid var(--border); background:var(--surface)">
+          <div style="font-family:'Space Mono',monospace;font-size:0.65rem;letter-spacing:0.15em;color:var(--gold);margin-bottom:0.8rem;text-transform:uppercase">Tempo de Resposta</div>
+          <p style="font-size:0.85rem;color:var(--muted)">Consultas gerais: <strong style="color:var(--text)">até 24h úteis</strong><br>Clientes ativos: <strong style="color:var(--text)">até 4h</strong><br>Emergências: <strong style="color:var(--gold)">imediato (24/7)</strong></p>
+        </div>
+      </div>
+
+      <div class="fade-in">
+        <form id="contactForm" onsubmit="handleSubmit(event)" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nome">Nome completo *</label>
+              <input type="text" id="nome" name="nome" placeholder="João Silva" required>
+            </div>
+            <div class="form-group">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="empresa" placeholder="Acme Corp">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail corporativo *</label>
+            <input type="email" id="email" name="email" placeholder="joao@suaempresa.com" required>
+          </div>
+          <div class="form-group">
+            <label for="assunto">Assunto *</label>
+            <select id="assunto" name="assunto" required>
+              <option value="">Selecione...</option>
+              <option>Avaliação gratuita de segurança</option>
+              <option>Plano Startup Secure</option>
+              <option>Plano Growth Shield</option>
+              <option>Plano Fortress (Enterprise)</option>
+              <option>Pentest pontual</option>
+              <option>Emergência de segurança</option>
+              <option>Parceria / Outro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mensagem">Mensagem *</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Descreva brevemente seu ambiente, tamanho da equipe e principais preocupações de segurança..." required></textarea>
+          </div>
+          <div class="form-feedback" id="formFeedback"></div>
+          <button type="submit" class="btn-primary" style="width:100%" id="submitBtn"><span>Enviar Mensagem →</span></button>
+          <p style="font-size:0.75rem;color:var(--muted);margin-top:0.8rem">* Seus dados são tratados conforme nossa Política de Privacidade e a LGPD.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer style="margin-top:4rem">
+    <div class="footer-logo">◈ SinaSecurity</div>
+    <p>© 2025 SinaSecurity. Todos os direitos reservados.</p>
+  </footer>
+</section>
+
+<section id="historia">
+  <div style="padding: 0 4rem;">
+    <div class="historia-hero fade-in">
+      <div class="historia-text">
+        <div class="section-tag" style="margin-bottom:1.5rem">Nossa História</div>
+        <h2>Nascemos de uma<br>convicção simples.</h2>
+        <p>A SinaSecurity surgiu em 2025 a partir de uma constatação recorrente: a grande maioria das brechas de segurança exploradas não são resultado de ataques sofisticados — são consequência de escolhas de desenvolvimento que nunca consideraram segurança como parte do processo.</p>
+        <p>Fundada por especialistas em desenvolvimento de software e segurança ofensiva, a empresa foi criada para preencher uma lacuna crítica no mercado brasileiro: a integração real de segurança no ciclo de vida do desenvolvimento, e não como uma camada superficial aplicada após o produto estar pronto.</p>
+        <p>Nosso nome carrega propósito: <em style="color:var(--gold)">"Sina"</em> representa o destino que escolhemos construir para um ecossistema digital mais seguro e resiliente.</p>
+      </div>
+      <div class="historia-visual">
+        <div class="historia-emblem">
+          <div class="emblem-inner">
+            <span class="year">2025</span>
+            <small>Fundação</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mvv-grid">
+      <div class="mvv-item fade-in">
+        <span class="mvv-icon">🎯</span>
+        <h3>Missão</h3>
+        <p>Democratizar o acesso à segurança de alto nível para empresas brasileiras de todos os portes, integrando proteção desde a primeira linha de código até a infraestrutura em produção.</p>
+      </div>
+      <div class="mvv-item fade-in">
+        <span class="mvv-icon">🔭</span>
+        <h3>Visão</h3>
+        <p>Ser a referência nacional em segurança integrada ao desenvolvimento, construindo um ecossistema digital onde segurança não é um custo, mas uma vantagem competitiva.</p>
+      </div>
+      <div class="mvv-item fade-in">
+        <span class="mvv-icon">⚖️</span>
+        <h3>Valores</h3>
+        <p>Transparência radical em cada relatório. Responsabilidade sobre cada vulnerabilidade que encontramos. Inovação contínua diante de ameaças que evoluem todos os dias.</p>
+      </div>
+    </div>
+
+    <div class="fade-in" style="margin-bottom:4rem;padding:3rem;border:1px solid var(--border);background:var(--surface)">
+      <div class="section-tag" style="margin-bottom:2rem">Diferencial Competitivo</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem">
+        <div>
+          <h4 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--gold);margin-bottom:0.8rem">O que o mercado faz</h4>
+          <p style="font-size:0.88rem;color:var(--muted);line-height:1.9">Auditorias pontuais após o produto estar em produção. Relatórios de vulnerabilidades sem acompanhamento de correção. Segurança como serviço isolado, desconectado do desenvolvimento.</p>
+        </div>
+        <div>
+          <h4 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--gold);margin-bottom:0.8rem">O que a SinaSecurity faz</h4>
+          <p style="font-size:0.88rem;color:var(--muted);line-height:1.9">Parceria contínua integrada ao processo de desenvolvimento. Segurança como parte do fluxo — não uma barreira. Relatórios acionáveis com suporte à correção e verificação.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ods-section fade-in">
+      <h3>Alinhamento com os ODS — ONU</h3>
+      <div class="ods-grid">
+        <div class="ods-item">
+          <div class="ods-badge">4</div>
+          <div>
+            <p><strong>Educação de Qualidade</strong><br>Investimos em capacitação de desenvolvedores e profissionais de TI em práticas de segurança, contribuindo para um mercado mais preparado.</p>
+          </div>
+        </div>
+        <div class="ods-item">
+          <div class="ods-badge">9</div>
+          <div>
+            <p><strong>Indústria, Inovação e Infraestrutura</strong><br>Fortalecemos a infraestrutura digital das empresas brasileiras, tornando-a mais resiliente e preparada para os desafios do mundo conectado.</p>
+          </div>
+        </div>
+        <div class="ods-item">
+          <div class="ods-badge">16</div>
+          <div>
+            <p><strong>Paz, Justiça e Instituições Eficazes</strong><br>Contribuímos para um ambiente digital mais seguro e ético, combatendo crimes cibernéticos e protegendo dados de cidadãos.</p>
+          </div>
+        </div>
+        <div class="ods-item">
+          <div class="ods-badge">17</div>
+          <div>
+            <p><strong>Parcerias e Meios de Implementação</strong><br>Construímos parcerias estratégicas com empresas de tecnologia, universidades e órgãos reguladores para ampliar o impacto da segurança digital.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer style="margin-top:4rem">
+    <div class="footer-logo">◈ SinaSecurity</div>
+    <p>© 2025 SinaSecurity. Todos os direitos reservados.</p>
+  </footer>
+</section>
+
+<section id="creditos">
+  <div style="padding: 0 4rem;">
+    <div class="section-header fade-in">
+      <div class="section-tag">Créditos</div>
+      <h2>As pessoas por<br>trás da segurança.</h2>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card fade-in">
+        <div class="team-avatar">RS</div>
+        <h3>Crastequini Dev</h3>
+        <div class="team-role">Founder & CEO</div>
+        <p>Mchine learnig, e segurança ofensiva e defensiva. Certificado OSCP, CEH e AWS Security.</p>
+      </div>
+
+    <div class="tech-section fade-in">
+      <h3>Tecnologias utilizadas neste projeto</h3>
+      <div class="tech-grid">
+        <div class="tech-tag">HTML5</div>
+        <div class="tech-tag">CSS3</div>
+        <div class="tech-tag">JavaScript ES6+</div>
+        <div class="tech-tag">Java 21</div>
+        <div class="tech-tag">Spring Boot 3</div>
+        <div class="tech-tag">Python 3.12</div>
+        <div class="tech-tag">REST API</div>
+        <div class="tech-tag">Docker</div>
+        <div class="tech-tag">AWS</div>
+        <div class="tech-tag">OWASP ASVS</div>
+        <div class="tech-tag">NIST CSF</div>
+        <div class="tech-tag">LGPD Compliance</div>
+        <div class="tech-tag">Google Fonts</div>
+        <div class="tech-tag">Spring Security</div>
+        <div class="tech-tag">SMTP / JavaMail</div>
+      </div>
+    </div>
+
+    <div class="agradecimento fade-in">
+      <h3>Agradecimentos</h3>
+      <p>Este projeto é resultado de muito estudo, dedicação e colaboração. Agradecemos à comunidade de segurança brasileira — em especial às comunidades OWASP Brasil, Roadsec e Hacker Cultura — por compartilharem conhecimento e inspirarem uma nova geração de profissionais. Agradecemos também a todos os clientes beta que confiaram em nós antes mesmo do produto estar pronto. Cada feedback foi combustível para chegarmos aqui.<br><br>
+      À família e amigos: obrigado pela paciência nos fins de semana e madrugadas de desenvolvimento.<br><br>
+      <em style="color:var(--gold)">"Segurança não é um produto. É um processo."</em> — Bruce Schneier</p>
+    </div>
+
+    <div class="fade-in" style="text-align:center;padding:3rem;border:1px solid var(--border)">
+      <div style="font-family:'Space Mono',monospace;font-size:0.65rem;letter-spacing:0.2em;color:var(--gold);margin-bottom:1rem;text-transform:uppercase">Versão</div>
+      <p style="font-family:'Syne',sans-serif;font-weight:700;font-size:2rem;color:var(--text)">v1.0.0</p>
+      <p style="font-size:0.85rem;color:var(--muted);margin-top:0.5rem">Lançamento: Janeiro 2025 · São Paulo, Brasil</p>
+    </div>
+  </div>
+
+  <footer style="margin-top:4rem">
+    <div class="footer-logo">◈ SinaSecurity</div>
+    <p>© 2025 SinaSecurity. Todos os direitos reservados.</p>
+    <p>Feito com ◈ no Brasil</p>
+  </footer>
+</section>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
